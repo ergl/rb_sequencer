@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# RB_SEQUENCER config
+
+if [ -z "$TCP_LIST_PORT" ]; then
+  export TCP_LIST_PORT=7878
+fi
+
+if [ -z "$INTER_DC_PORT" ]; then
+  export INTER_DC_PORT=8989
+fi
+
+# Timer config
+
+if [ -z "$FAULT_TOLERANCE_FACTOR" ]; then
+  export FAULT_TOLERANCE_FACTOR=1
+fi
+
+
+if [ -z "$RED_HB_SCHEDULE_MS" ]; then
+  export RED_HB_SCHEDULE_MS=5
+fi
+
+if [ -z "$RED_HB_FIXED_SCHEDULE_MS" ]; then
+  export RED_HB_FIXED_SCHEDULE_MS=250
+fi
+
+if [ -z "$RED_DELIVER_INTERVAL_MS" ]; then
+  export RED_DELIVER_INTERVAL_MS=5
+fi
+
+if [ -z "$RED_PRUNE_INTERVAL" ]; then
+  export RED_PRUNE_INTERVAL=20
+fi
+
+if [ -z "$RED_ABORT_INTERVAL_MS" ]; then
+  export RED_ABORT_INTERVAL_MS=100
+fi
+
+# Pool config
+
+if [ -z "$INTER_DC_SENDER_POOL_SIZE" ]; then
+  export INTER_DC_SENDER_POOL_SIZE=16
+fi
+
+if [ -z "$RED_COORD_POOL_SIZE" ]; then
+  export RED_COORD_POOL_SIZE=50
+fi
+
+if [ -z "$REDBLUE_SEQUENCER_POOL_SIZE" ]; then
+  # One per AWS core
+  export REDBLUE_SEQUENCER_POOL_SIZE=8
+fi
+
+# Node config
+
+if [ -z "$IP" ]; then
+  export IP="127.0.0.1"
+fi
+
+if [ -z "$INTER_DC_IP" ]; then
+  export INTER_DC_IP="${IP}"
+fi
+
+if [ -z "$INSTANCE_NAME" ]; then
+  export INSTANCE_NAME=rb_sequencer
+fi
+
+if [ -z "$NODE_NAME" ]; then
+  export NODE_NAME=${INSTANCE_NAME}@${IP}
+fi
+
+if [ -z "$COOKIE" ]; then
+  export COOKIE=rb_sequencer_cookie
+fi
+
+RELNAME="`dirname \"$0\"`"/${INSTANCE_NAME}
+exec ${RELNAME} "$@"

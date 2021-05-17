@@ -1,0 +1,18 @@
+{"1.2.0",
+[{<<"observer_cli">>,{pkg,<<"observer_cli">>,<<"1.6.0">>},0},
+ {<<"pvc_types">>,
+  {git,"https://github.com/ergl/pvc_types.git",
+       {ref,"158e90fc1e44a2b3fc260c00f2e1647a48719689"}},
+  0},
+ {<<"ranch">>,{pkg,<<"ranch">>,<<"1.7.1">>},0},
+ {<<"recon">>,{pkg,<<"recon">>,<<"2.5.1">>},0}]}.
+[
+{pkg_hash,[
+ {<<"observer_cli">>, <<"F7FFE1C9D43B7BB0ECDBF158D0DD211D44AA505D5510BE580D1F25DCA5627A08">>},
+ {<<"ranch">>, <<"6B1FAB51B49196860B733A49C07604465A47BDB78AA10C1C16A3D199F7F8C881">>},
+ {<<"recon">>, <<"430FFA60685AC1EFDFB1FE4C97B8767C92D0D92E6E7C3E8621559BA77598678A">>}]},
+{pkg_hash_ext,[
+ {<<"observer_cli">>, <<"7E34E3BB8412393FF9F7F6258F45CE63247BCBACE78EE149D69859760DD80E5C">>},
+ {<<"ranch">>, <<"451D8527787DF716D99DC36162FCA05934915DB0B6141BBDAC2EA8D3C7AFC7D7">>},
+ {<<"recon">>, <<"5721C6B6D50122D8F68CCCAC712CAA1231F97894BAB779EFF5FF0F886CB44648">>}]}
+].

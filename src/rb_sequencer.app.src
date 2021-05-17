@@ -1,0 +1,19 @@
+%% -*- erlang -*-
+{application, rb_sequencer,
+ [
+  {description, "Red-Blue sequencer service"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  sasl,
+                  ranch,
+                  pvc_types,
+                  runtime_tools,
+                  recon,
+                  observer_cli
+                 ]},
+  {mod, { rb_sequencer_app, []}},
+  {env, []}
+ ]}.
